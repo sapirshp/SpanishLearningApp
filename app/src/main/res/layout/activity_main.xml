@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/backgroundQuestionScreen">
+    android:background="@drawable/background_question_screen">
 
     <Button
         android:id="@+id/button3"
@@ -16,6 +16,7 @@
         android:layout_marginEnd="59dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/buttons_design"
+        android:text="perro"
         app:layout_constraintBottom_toTopOf="@+id/button6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button4"
@@ -28,6 +29,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="416dp"
         android:background="@drawable/buttons_design"
+        android:text="Manzana"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -41,6 +43,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/buttons_design"
+        android:text="naranja"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button6"
         app:layout_constraintHorizontal_bias="0.51"
@@ -54,6 +57,22 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="59dp"
         android:background="@drawable/buttons_design"
+        android:text="queso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="104dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="129dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="159dp"
+        android:contentDescription="@string/question_picture"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/apple" />
 </android.support.constraint.ConstraintLayout>

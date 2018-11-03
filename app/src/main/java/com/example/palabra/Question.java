@@ -2,6 +2,8 @@ package com.example.palabra;
 
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 public class Question
 {
     // ###  ATTRIBUTES   ###
@@ -41,6 +43,8 @@ public class Question
 
     static Question get_question()
     {
-        return new Question("banana", "apple", "orange", "pair", 1);
+        ArrayList<String> question = Questions.get_question();
+        return new Question(question.get(1), question.get(2), question.get(3), question.get(4), 1);
     }
 }
+

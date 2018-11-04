@@ -7,13 +7,14 @@ import java.util.ArrayList;
 public class Question
 {
     // ###  ATTRIBUTES   ###
-    private String answer_a, answer_b, answer_c, answer_d;
+    private String englishWord, answer_a, answer_b, answer_c, answer_d;
     private int correct_ans;
     ImageView image;
 
     // ###  CONSTRUCTOR   ###
-    public Question(String ans1, String ans2, String ans3, String ans4, int correct)
+    public Question(String toTranslate, String ans1, String ans2, String ans3, String ans4, int correct)
     {
+        englishWord = toTranslate;
         answer_a = ans1;
         answer_b = ans2;
         answer_c = ans3;
@@ -27,7 +28,7 @@ public class Question
 
     public String getAnswer(int choice)
     {
-        String answer = "fffff";
+        String answer = "answer_a";
         switch (choice){
             case 1: answer =  answer_a;
                 break;
@@ -44,7 +45,8 @@ public class Question
     static Question get_question()
     {
         ArrayList<String> question = Questions.get_question();
-        return new Question(question.get(1), question.get(2), question.get(3), question.get(4), 1);
+        return new Question(question.get(0), question.get(1), question.get(2), question.get(3),
+                            question.get(4), 1);
     }
 }
 

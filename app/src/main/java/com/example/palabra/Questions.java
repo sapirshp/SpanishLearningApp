@@ -2,12 +2,11 @@ package com.example.palabra;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 
 public class Questions {
 
-    public static final ArrayList<ArrayList<String>> questions;
-    public static ArrayList<Integer> questionsNumsList;
+    private static final ArrayList<ArrayList<String>> questions;
+    private static ArrayList<Integer> questionsNumbersList;
     private static ArrayList<String> copiedQuestion;
     static
     {
@@ -37,24 +36,41 @@ public class Questions {
         thirdQuestion.add("Falda");
         questions.add(thirdQuestion);
 
-        questionsNumsList = new ArrayList<Integer>();
+//        ArrayList<String> fourthQuestion = new ArrayList<>();
+//        thirdQuestion.add("Truck");
+//        thirdQuestion.add("Camión");
+//        thirdQuestion.add("Bicicleta");
+//        thirdQuestion.add("Carro");
+//        thirdQuestion.add("Motocicleta");
+//        questions.add(thirdQuestion);
+//
+//        ArrayList<String> fifthQuestion = new ArrayList<>();
+//        thirdQuestion.add("fireman");
+//        thirdQuestion.add("Bombero");
+//        thirdQuestion.add("Doctor");
+//        thirdQuestion.add("Conductor");
+//        thirdQuestion.add("Profesor");
+//        questions.add(thirdQuestion);
+
+        questionsNumbersList = new ArrayList<Integer>();
     }
 
-    static void initSet()
+    private static void initSet()
     {
-        questionsNumsList.add(0);
-        questionsNumsList.add(1);
-        questionsNumsList.add(2);
-        Collections.shuffle(questionsNumsList);
+        for(int i = 0; i < questions.size(); i++)
+        {
+            questionsNumbersList.add(i);
+        }
+        Collections.shuffle(questionsNumbersList);
     }
 
     static ArrayList<String> get_question()
     {
-        if (questionsNumsList.size() < 1)
+        if (questionsNumbersList.size() < 1)
         {
             initSet();
         }
-        int chosenQuestionNum = questionsNumsList.remove(questionsNumsList.size() - 1);
+        int chosenQuestionNum = questionsNumbersList.remove(questionsNumbersList.size() - 1);
 
         copiedQuestion = questions.get(chosenQuestionNum);
         return copiedQuestion;

@@ -1,15 +1,16 @@
 package com.example.palabra;
 
-import android.util.SparseArray;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Collections;
 
 public class Questions {
 
-    public static final SparseArray<ArrayList<String>> questions;
+    private static final ArrayList<ArrayList<String>> questionsList;
+    private static ArrayList<Integer> questionsNumbersList;
+    private static ArrayList<String> copiedQuestion;
     static
     {
-        questions = new SparseArray<>(3);
+        questionsList = new ArrayList<>(3);
 
         ArrayList<String> firstQuestion = new ArrayList<>();
         firstQuestion.add("Apple");
@@ -17,7 +18,7 @@ public class Questions {
         firstQuestion.add("Naranja");
         firstQuestion.add("Durazno");
         firstQuestion.add("Piña");
-        questions.put(1, firstQuestion);
+        questionsList.add(firstQuestion);
 
         ArrayList<String> secondQuestion = new ArrayList<>();
         secondQuestion.add("Cow");
@@ -25,7 +26,7 @@ public class Questions {
         secondQuestion.add("Gato");
         secondQuestion.add("Perro");
         secondQuestion.add("León");
-        questions.put(2, secondQuestion);
+        questionsList.add(secondQuestion);
 
         ArrayList<String> thirdQuestion = new ArrayList<>();
         thirdQuestion.add("Shirt");
@@ -33,14 +34,46 @@ public class Questions {
         thirdQuestion.add("Pantalón");
         thirdQuestion.add("Vestido");
         thirdQuestion.add("Falda");
-        questions.put(3, thirdQuestion);
+        questionsList.add(thirdQuestion);
+
+//        ArrayList<String> fourthQuestion = new ArrayList<>();
+//        thirdQuestion.add("Truck");
+//        thirdQuestion.add("Camión");
+//        thirdQuestion.add("Bicicleta");
+//        thirdQuestion.add("Carro");
+//        thirdQuestion.add("Motocicleta");
+//        questionsList.add(thirdQuestion);
+//
+//        ArrayList<String> fifthQuestion = new ArrayList<>();
+//        thirdQuestion.add("fireman");
+//        thirdQuestion.add("Bombero");
+//        thirdQuestion.add("Doctor");
+//        thirdQuestion.add("Conductor");
+//        thirdQuestion.add("Profesor");
+//        questionsList.add(thirdQuestion);
+
+        questionsNumbersList = new ArrayList<Integer>();
+    }
+
+    private static void initSet()
+    {
+        for(int i = 0; i < questionsList.size(); i++)
+        {
+            questionsNumbersList.add(i);
+        }
+        Collections.shuffle(questionsNumbersList);
     }
 
     static ArrayList<String> get_question()
     {
-        Random random = new Random();
-        int randomNumber = random.nextInt((questions.size() + 1));
-        return questions.get(randomNumber);
+        if (questionsNumbersList.size() < 1)
+        {
+            initSet();
+        }
+        int chosenQuestionNum = questionsNumbersList.remove(questionsNumbersList.size() - 1);
+
+        copiedQuestion = questionsList.get(chosenQuestionNum);
+        return copiedQuestion;
     }
 
 }

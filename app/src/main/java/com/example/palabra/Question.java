@@ -44,7 +44,7 @@ public class Question
 
     static Question get_question()
     {
-        ArrayList<String> question = Questions.get_question();
+        ArrayList<String> question = QuestionsDB.get_question();
         return new Question(question.get(0), question.get(1), question.get(2), question.get(3),
                             question.get(4), 1);
     }

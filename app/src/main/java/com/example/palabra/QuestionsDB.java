@@ -3,7 +3,7 @@ package com.example.palabra;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Questions {
+public class QuestionsDB {
 
     private static final ArrayList<ArrayList<String>> questionsList;
     private static ArrayList<Integer> questionsNumbersList;

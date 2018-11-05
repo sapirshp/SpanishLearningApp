@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView img = (ImageView)findViewById(R.id.appImageView);
         Context context = img.getContext();
-        int id = context.getResources().getIdentifier(current_quest.getCorrectAnsStr(), "drawable", context.getPackageName());
+        int id = context.getResources().getIdentifier(current_quest.getCorrectAnsStr().toLowerCase(), "drawable", context.getPackageName());
         img.setImageResource(id);    // make modular in next update
 
         Button button_answer_a = findViewById(R.id.answer_a);

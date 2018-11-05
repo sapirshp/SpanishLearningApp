@@ -51,7 +51,7 @@ public class answerScreen extends AppCompatActivity {
 
         ImageView img = (ImageView)findViewById(R.id.appImageView);
         Context context = img.getContext();
-        int id = context.getResources().getIdentifier(correct_ans_str+"-answer", "drawable", context.getPackageName());
+        int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase()+"_answer", "drawable", context.getPackageName());
         img.setImageResource(id);    // make modular in next update
 
         Button playAgainBtn = findViewById(R.id.play_again_btn);

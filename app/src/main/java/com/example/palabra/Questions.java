@@ -1,16 +1,13 @@
 package com.example.palabra;
 
-import android.util.SparseArray;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.Iterator;
-import java.util.Random;
-import java.util.Set;
 
 public class Questions {
 
     public static final ArrayList<ArrayList<String>> questions;
-    public static Set<Integer> questionsSet;
+    public static ArrayList<Integer> questionsNumsList;
     private static ArrayList<String> copiedQuestion;
     static
     {
@@ -40,26 +37,26 @@ public class Questions {
         thirdQuestion.add("Falda");
         questions.add(thirdQuestion);
 
-        questionsSet = new HashSet<Integer>();
+        questionsNumsList = new ArrayList<Integer>();
     }
 
     static void initSet()
     {
-        questionsSet.add(0);
-        questionsSet.add(1);
-        questionsSet.add(2);
+        questionsNumsList.add(0);
+        questionsNumsList.add(1);
+        questionsNumsList.add(2);
+        Collections.shuffle(questionsNumsList);
     }
 
     static ArrayList<String> get_question()
     {
-        if (questionsSet.size() < 1)
+        if (questionsNumsList.size() < 1)
         {
             initSet();
         }
-        Iterator<Integer> iterator = questionsSet.iterator();
-        int chosenQuestionNum = iterator.next();
+        int chosenQuestionNum = questionsNumsList.remove(questionsNumsList.size() - 1);
+
         copiedQuestion = questions.get(chosenQuestionNum);
-        questionsSet.remove(chosenQuestionNum);
         return copiedQuestion;
     }
 

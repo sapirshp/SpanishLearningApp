@@ -10,7 +10,7 @@ public class Questions {
     private static ArrayList<String> copiedQuestion;
     static
     {
-        questionsList = new ArrayList<>(3);
+        questionsList = new ArrayList<>(5);
 
         ArrayList<String> firstQuestion = new ArrayList<>();
         firstQuestion.add("Apple");
@@ -52,7 +52,7 @@ public class Questions {
         thirdQuestion.add("Profesor");
         questionsList.add(fifthQuestion);
 
-        questionsNumbersList = new ArrayList<Integer>();
+        questionsNumbersList = new ArrayList<Integer>(5);
     }
 
     private static void initSet()

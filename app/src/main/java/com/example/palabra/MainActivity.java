@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     static int SECOND_SCREEN = 1;
     static int EXIT_APP = 0;
     static int PLAY_AGAIN = 1;
+    Drawable questionImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +26,21 @@ public class MainActivity extends AppCompatActivity {
     protected void ask_question()
     {
         final Question current_quest = Question.get_question();
+        switch (current_quest.getCorrectAnsStr())
+        {
+            case "Manzana":
+                questionImage =  getResources().getDrawable(R.drawable.apple);
+                break;
+            case "Vaca":
+                questionImage = getResources().getDrawable(R.drawable.apple);
+                break;
+            case "Camisa":
+                questionImage = getResources().getDrawable(R.drawable.apple);
+                break;
+        }
 
         ImageView img = (ImageView)findViewById(R.id.appImageView);
-        Drawable apple = getResources().getDrawable(R.drawable.apple);
-        img.setImageDrawable(apple);    // make modular in next update
-
+        img.setImageDrawable(questionImage);    // make modular in next update
 
         Button button_answer_a = findViewById(R.id.answer_a);
         button_answer_a.setText(current_quest.getAnswer(1));

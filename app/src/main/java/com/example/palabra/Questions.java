@@ -5,12 +5,12 @@ import java.util.Collections;
 
 public class Questions {
 
-    private static final ArrayList<ArrayList<String>> questions;
+    private static final ArrayList<ArrayList<String>> questionsList;
     private static ArrayList<Integer> questionsNumbersList;
     private static ArrayList<String> copiedQuestion;
     static
     {
-        questions = new ArrayList<>(3);
+        questionsList = new ArrayList<>(3);
 
         ArrayList<String> firstQuestion = new ArrayList<>();
         firstQuestion.add("Apple");
@@ -18,7 +18,7 @@ public class Questions {
         firstQuestion.add("Naranja");
         firstQuestion.add("Durazno");
         firstQuestion.add("Piña");
-        questions.add(firstQuestion);
+        questionsList.add(firstQuestion);
 
         ArrayList<String> secondQuestion = new ArrayList<>();
         secondQuestion.add("Cow");
@@ -26,7 +26,7 @@ public class Questions {
         secondQuestion.add("Gato");
         secondQuestion.add("Perro");
         secondQuestion.add("León");
-        questions.add(secondQuestion);
+        questionsList.add(secondQuestion);
 
         ArrayList<String> thirdQuestion = new ArrayList<>();
         thirdQuestion.add("Shirt");
@@ -34,7 +34,7 @@ public class Questions {
         thirdQuestion.add("Pantalón");
         thirdQuestion.add("Vestido");
         thirdQuestion.add("Falda");
-        questions.add(thirdQuestion);
+        questionsList.add(thirdQuestion);
 
 //        ArrayList<String> fourthQuestion = new ArrayList<>();
 //        thirdQuestion.add("Truck");
@@ -42,7 +42,7 @@ public class Questions {
 //        thirdQuestion.add("Bicicleta");
 //        thirdQuestion.add("Carro");
 //        thirdQuestion.add("Motocicleta");
-//        questions.add(thirdQuestion);
+//        questionsList.add(thirdQuestion);
 //
 //        ArrayList<String> fifthQuestion = new ArrayList<>();
 //        thirdQuestion.add("fireman");
@@ -50,14 +50,14 @@ public class Questions {
 //        thirdQuestion.add("Doctor");
 //        thirdQuestion.add("Conductor");
 //        thirdQuestion.add("Profesor");
-//        questions.add(thirdQuestion);
+//        questionsList.add(thirdQuestion);
 
         questionsNumbersList = new ArrayList<Integer>();
     }
 
     private static void initSet()
     {
-        for(int i = 0; i < questions.size(); i++)
+        for(int i = 0; i < questionsList.size(); i++)
         {
             questionsNumbersList.add(i);
         }
@@ -72,7 +72,7 @@ public class Questions {
         }
         int chosenQuestionNum = questionsNumbersList.remove(questionsNumbersList.size() - 1);
 
-        copiedQuestion = questions.get(chosenQuestionNum);
+        copiedQuestion = questionsList.get(chosenQuestionNum);
         return copiedQuestion;
     }
 

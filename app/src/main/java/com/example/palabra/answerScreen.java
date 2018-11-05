@@ -21,7 +21,6 @@ public class answerScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer_screen);
 
-
         String message;
         TextView is_correct_box = findViewById(R.id.is_correct_text_view);
         boolean is_correct = getIntent().getExtras().getBoolean("IS_CORRECT");
@@ -41,26 +40,14 @@ public class answerScreen extends AppCompatActivity {
         ImageView img = findViewById(R.id.ansImageView);
         Context context = img.getContext();
         int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase()+"_answer", "drawable", context.getPackageName());
-        img.setImageResource(id);    // make modular in next update
+        img.setImageResource(id);
 
         Button playAgainBtn = findViewById(R.id.play_again_btn);
         playAgainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent goToAnsScreen = new Intent(getApplicationContext(), MainActivity.class);
-//                startActivity(goToAnsScreen);
                 Intent playAgainIntent = new Intent();
                 setResult(1, playAgainIntent);
-                finish();
-            }
-        });
-
-        Button exitBtn = findViewById(R.id.exitBtn);
-        exitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent exitIntent = new Intent();
-                setResult(0, exitIntent);
                 finish();
             }
         });

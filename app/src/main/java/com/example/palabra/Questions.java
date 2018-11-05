@@ -38,7 +38,7 @@ public class Questions {
 
         ArrayList<String> fourthQuestion = new ArrayList<>();
         thirdQuestion.add("Truck");
-        thirdQuestion.add("Camión");
+        thirdQuestion.add("Camion");
         thirdQuestion.add("Bicicleta");
         thirdQuestion.add("Carro");
         thirdQuestion.add("Motocicleta");

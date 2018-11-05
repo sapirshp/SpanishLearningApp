@@ -7,10 +7,9 @@ public class Questions {
 
     private static final ArrayList<ArrayList<String>> questionsList;
     private static ArrayList<Integer> questionsNumbersList;
-    private static ArrayList<String> copiedQuestion;
     static
     {
-        questionsList = new ArrayList<>(5);
+        questionsList = new ArrayList<>(3);
 
         ArrayList<String> firstQuestion = new ArrayList<>();
         firstQuestion.add("Apple");
@@ -37,22 +36,22 @@ public class Questions {
         questionsList.add(thirdQuestion);
 
         ArrayList<String> fourthQuestion = new ArrayList<>();
-        thirdQuestion.add("Truck");
-        thirdQuestion.add("Camion");
-        thirdQuestion.add("Bicicleta");
-        thirdQuestion.add("Carro");
-        thirdQuestion.add("Motocicleta");
+        fourthQuestion.add("Truck");
+        fourthQuestion.add("Camion");
+        fourthQuestion.add("Bicicleta");
+        fourthQuestion.add("Carro");
+        fourthQuestion.add("Motocicleta");
         questionsList.add(fourthQuestion);
 
         ArrayList<String> fifthQuestion = new ArrayList<>();
-        thirdQuestion.add("fireman");
-        thirdQuestion.add("Bombero");
-        thirdQuestion.add("Doctor");
-        thirdQuestion.add("Conductor");
-        thirdQuestion.add("Profesor");
+        fifthQuestion.add("fireman");
+        fifthQuestion.add("Bombero");
+        fifthQuestion.add("Doctor");
+        fifthQuestion.add("Conductor");
+        fifthQuestion.add("Profesor");
         questionsList.add(fifthQuestion);
 
-        questionsNumbersList = new ArrayList<Integer>(5);
+        questionsNumbersList = new ArrayList<Integer>(3);
     }
 
     private static void initSet()
@@ -72,8 +71,7 @@ public class Questions {
         }
         int chosenQuestionNum = questionsNumbersList.remove(questionsNumbersList.size() - 1);
 
-        copiedQuestion = questionsList.get(chosenQuestionNum);
-        return copiedQuestion;
+        return questionsList.get(chosenQuestionNum);
     }
 
 }

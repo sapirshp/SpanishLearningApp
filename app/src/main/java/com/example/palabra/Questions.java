@@ -42,7 +42,7 @@ public class Questions {
         thirdQuestion.add("Bicicleta");
         thirdQuestion.add("Carro");
         thirdQuestion.add("Motocicleta");
-        questionsList.add(thirdQuestion);
+        questionsList.add(fourthQuestion);
 
         ArrayList<String> fifthQuestion = new ArrayList<>();
         thirdQuestion.add("fireman");
@@ -50,7 +50,7 @@ public class Questions {
         thirdQuestion.add("Doctor");
         thirdQuestion.add("Conductor");
         thirdQuestion.add("Profesor");
-        questionsList.add(thirdQuestion);
+        questionsList.add(fifthQuestion);
 
         questionsNumbersList = new ArrayList<Integer>();
     }

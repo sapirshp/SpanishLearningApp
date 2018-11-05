@@ -9,9 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class answerScreen extends AppCompatActivity {
+
+    private static long back_pressed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,7 @@ public class answerScreen extends AppCompatActivity {
         String correct_ans_str = getIntent().getExtras().getString("ANSWER");
 
         // displaying the answer picture on the screen
-        ImageView img = (ImageView)findViewById(R.id.ansImageView);
+        ImageView img = findViewById(R.id.ansImageView);
         Context context = img.getContext();
         int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase()+"_answer", "drawable", context.getPackageName());
         img.setImageResource(id);    // make modular in next update
@@ -61,7 +64,19 @@ public class answerScreen extends AppCompatActivity {
                 finish();
             }
         });
+    }
 
 
+    @Override
+    public void onBackPressed()
+    {
+        if (back_pressed + 2000 > System.currentTimeMillis())
+        {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            startActivity(intent);
+        }
+        else Toast.makeText(getBaseContext(), "Press once again to exit!", Toast.LENGTH_SHORT).show();
+        back_pressed = System.currentTimeMillis();
     }
 }

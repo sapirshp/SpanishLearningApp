@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
+    private static long back_pressed;
 
     static int SECOND_SCREEN = 1;
     static int EXIT_APP = 0;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         final Question current_quest = Question.get_question();
 
         // displaying the question image on the screen.
-        ImageView img = (ImageView)findViewById(R.id.appImageView);
+        ImageView img = findViewById(R.id.appImageView);
         Context context = img.getContext();
         int id = context.getResources().getIdentifier(current_quest.getCorrectAnsStr().toLowerCase(), "drawable", context.getPackageName());
         img.setImageResource(id);    // make modular in next update
@@ -95,8 +97,9 @@ public class MainActivity extends AppCompatActivity {
         {
             if(resultCode == EXIT_APP)
             {
-                moveTaskToBack(true);
-                android.os.Process.killProcess(android.os.Process.myPid());
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                startActivity(intent);
             }
             if(resultCode == PLAY_AGAIN)
             {
@@ -106,5 +109,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    @Override
+    public void onBackPressed()
+    {
+        if (back_pressed + 2000 > System.currentTimeMillis())
+        {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            startActivity(intent);
+        }
+        else Toast.makeText(getBaseContext(), "Press once again to exit!", Toast.LENGTH_SHORT).show();
+        back_pressed = System.currentTimeMillis();
+    }
 
 }

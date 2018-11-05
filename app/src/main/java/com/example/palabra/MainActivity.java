@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 questionImage =  getResources().getDrawable(R.drawable.apple);
                 break;
             case "Vaca":
-                questionImage = getResources().getDrawable(R.drawable.apple);
+                questionImage = getResources().getDrawable(R.drawable.cow);
                 break;
             case "Camisa":
-                questionImage = getResources().getDrawable(R.drawable.apple);
+                questionImage = getResources().getDrawable(R.drawable.shirt);
                 break;
         }
 

@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     static int SECOND_SCREEN = 1;
     static int EXIT_APP = 0;
     static int PLAY_AGAIN = 1;
-    Drawable questionImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,19 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void ask_question()
     {
         final Question current_quest = Question.get_question();
-//        switch (current_quest.getCorrectAnsStr())
-//        {
-//            case "Manzana":
-//                questionImage =  getResources().getDrawable(R.drawable.apple);
-//                break;
-//            case "Vaca":
-//                questionImage = getResources().getDrawable(R.drawable.cow);
-//                break;
-//            case "Camisa":
-//                questionImage = getResources().getDrawable(R.drawable.shirt);
-//                break;
-//        }
 
+        // displaying the question image on the screen.
         ImageView img = (ImageView)findViewById(R.id.appImageView);
         Context context = img.getContext();
         int id = context.getResources().getIdentifier(current_quest.getCorrectAnsStr().toLowerCase(), "drawable", context.getPackageName());

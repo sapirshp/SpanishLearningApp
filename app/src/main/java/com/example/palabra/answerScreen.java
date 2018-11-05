@@ -33,23 +33,9 @@ public class answerScreen extends AppCompatActivity {
         is_correct_box.setText(message);
 
         String correct_ans_str = getIntent().getExtras().getString("ANSWER");
-        //TextView correct_ans_box = findViewById(R.id.answer_text_view);
-        //correct_ans_box.setText(correct_ans_str);
-//        Drawable questionImage =  getResources().getDrawable(R.drawable.apple);;
-//        switch (correct_ans_str)
-//        {
-//            case "Manzana":
-//                questionImage =  getResources().getDrawable(R.drawable.manzana);
-//                break;
-//            case "Vaca":
-//                questionImage = getResources().getDrawable(R.drawable.vaca);
-//                break;
-//            case "Camisa":
-//                questionImage = getResources().getDrawable(R.drawable.camisa);
-//                break;
-//        }
 
-        ImageView img = (ImageView)findViewById(R.id.appImageView);
+        // displaying the answer picture on the screen
+        ImageView img = (ImageView)findViewById(R.id.ansImageView);
         Context context = img.getContext();
         int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase()+"_answer", "drawable", context.getPackageName());
         img.setImageResource(id);    // make modular in next update

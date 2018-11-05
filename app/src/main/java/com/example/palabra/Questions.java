@@ -36,21 +36,21 @@ public class Questions {
         thirdQuestion.add("Falda");
         questionsList.add(thirdQuestion);
 
-//        ArrayList<String> fourthQuestion = new ArrayList<>();
-//        thirdQuestion.add("Truck");
-//        thirdQuestion.add("Camión");
-//        thirdQuestion.add("Bicicleta");
-//        thirdQuestion.add("Carro");
-//        thirdQuestion.add("Motocicleta");
-//        questionsList.add(thirdQuestion);
-//
-//        ArrayList<String> fifthQuestion = new ArrayList<>();
-//        thirdQuestion.add("fireman");
-//        thirdQuestion.add("Bombero");
-//        thirdQuestion.add("Doctor");
-//        thirdQuestion.add("Conductor");
-//        thirdQuestion.add("Profesor");
-//        questionsList.add(thirdQuestion);
+        ArrayList<String> fourthQuestion = new ArrayList<>();
+        thirdQuestion.add("Truck");
+        thirdQuestion.add("Camión");
+        thirdQuestion.add("Bicicleta");
+        thirdQuestion.add("Carro");
+        thirdQuestion.add("Motocicleta");
+        questionsList.add(thirdQuestion);
+
+        ArrayList<String> fifthQuestion = new ArrayList<>();
+        thirdQuestion.add("fireman");
+        thirdQuestion.add("Bombero");
+        thirdQuestion.add("Doctor");
+        thirdQuestion.add("Conductor");
+        thirdQuestion.add("Profesor");
+        questionsList.add(thirdQuestion);
 
         questionsNumbersList = new ArrayList<Integer>();
     }

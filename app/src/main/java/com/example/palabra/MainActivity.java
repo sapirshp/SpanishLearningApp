@@ -1,5 +1,6 @@
 package com.example.palabra;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
@@ -26,21 +27,23 @@ public class MainActivity extends AppCompatActivity {
     protected void ask_question()
     {
         final Question current_quest = Question.get_question();
-        switch (current_quest.getCorrectAnsStr())
-        {
-            case "Manzana":
-                questionImage =  getResources().getDrawable(R.drawable.apple);
-                break;
-            case "Vaca":
-                questionImage = getResources().getDrawable(R.drawable.cow);
-                break;
-            case "Camisa":
-                questionImage = getResources().getDrawable(R.drawable.shirt);
-                break;
-        }
+//        switch (current_quest.getCorrectAnsStr())
+//        {
+//            case "Manzana":
+//                questionImage =  getResources().getDrawable(R.drawable.apple);
+//                break;
+//            case "Vaca":
+//                questionImage = getResources().getDrawable(R.drawable.cow);
+//                break;
+//            case "Camisa":
+//                questionImage = getResources().getDrawable(R.drawable.shirt);
+//                break;
+//        }
 
         ImageView img = (ImageView)findViewById(R.id.appImageView);
-        img.setImageDrawable(questionImage);    // make modular in next update
+        Context context = img.getContext();
+        int id = context.getResources().getIdentifier(current_quest.getCorrectAnsStr(), "drawable", context.getPackageName());
+        img.setImageResource(id);    // make modular in next update
 
         Button button_answer_a = findViewById(R.id.answer_a);
         button_answer_a.setText(current_quest.getAnswer(1));

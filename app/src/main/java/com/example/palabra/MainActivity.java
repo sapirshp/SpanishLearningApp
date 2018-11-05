@@ -1,5 +1,6 @@
 package com.example.palabra;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
@@ -26,10 +27,11 @@ public class MainActivity extends AppCompatActivity {
     {
         final Question current_quest = Question.get_question();
 
+        // displaying the question image on the screen.
         ImageView img = (ImageView)findViewById(R.id.appImageView);
-        Drawable apple = getResources().getDrawable(R.drawable.apple);
-        img.setImageDrawable(apple);    // make modular in next update
-
+        Context context = img.getContext();
+        int id = context.getResources().getIdentifier(current_quest.getCorrectAnsStr().toLowerCase(), "drawable", context.getPackageName());
+        img.setImageResource(id);    // make modular in next update
 
         Button button_answer_a = findViewById(R.id.answer_a);
         button_answer_a.setText(current_quest.getAnswer(1));

@@ -1,10 +1,13 @@
 package com.example.palabra;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -30,8 +33,12 @@ public class answerScreen extends AppCompatActivity {
         is_correct_box.setText(message);
 
         String correct_ans_str = getIntent().getExtras().getString("ANSWER");
-        TextView correct_ans_box = findViewById(R.id.answer_text_view);
-        correct_ans_box.setText(correct_ans_str);
+
+        // displaying the answer picture on the screen
+        ImageView img = (ImageView)findViewById(R.id.ansImageView);
+        Context context = img.getContext();
+        int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase()+"_answer", "drawable", context.getPackageName());
+        img.setImageResource(id);    // make modular in next update
 
         Button playAgainBtn = findViewById(R.id.play_again_btn);
         playAgainBtn.setOnClickListener(new View.OnClickListener() {

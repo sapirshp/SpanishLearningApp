@@ -2,7 +2,6 @@ package com.example.palabra;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,10 +10,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.palabra.QuestionsDB.getQuestionsAmount;
+import static com.example.palabra.QuestionsDB.score;
+
 
 public class answerScreen extends AppCompatActivity {
 
     private static long back_pressed;
+
+    public static String getPerformanceMetric() {
+        return String.valueOf(score) + "/" + String.valueOf(getQuestionsAmount());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +33,13 @@ public class answerScreen extends AppCompatActivity {
         if(is_correct)
         {
             message = "yay! correct!";
+            score++;
         }
         else
         {
             message = "don't worry, you'll do better next time...";
         }
         is_correct_box.setText(message);
-
         String correct_ans_str = getIntent().getExtras().getString("ANSWER");
 
         // displaying the answer picture on the screen
@@ -41,6 +47,9 @@ public class answerScreen extends AppCompatActivity {
         Context context = img.getContext();
         int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase()+"_answer", "drawable", context.getPackageName());
         img.setImageResource(id);
+
+        String performanceMetric = getPerformanceMetric(); //TODO use in the new score bar
+
 
         Button playAgainBtn = findViewById(R.id.play_again_btn);
         playAgainBtn.setOnClickListener(new View.OnClickListener() {

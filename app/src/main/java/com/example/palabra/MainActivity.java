@@ -36,40 +36,40 @@ public class MainActivity extends AppCompatActivity {
         img.setImageResource(id);    // make modular in next update
 
         Button button_answer_a = findViewById(R.id.answer_a);
-        button_answer_a.setText(current_quest.getAnswer(1));
+        button_answer_a.setText(current_quest.getAnswer(0));
         button_answer_a.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View V)
             {
-                buttonClick(current_quest.getCorrectAnsInt(), 1, current_quest.getCorrectAnsStr());
+                buttonClick(current_quest.getCorrectAnsInt(), 0, current_quest.getCorrectAnsStr());
             }
         });
 
         Button button_answer_b = findViewById(R.id.answer_b);
-        button_answer_b.setText(current_quest.getAnswer(2));
+        button_answer_b.setText(current_quest.getAnswer(1));
         button_answer_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonClick(current_quest.getCorrectAnsInt(), 1, current_quest.getCorrectAnsStr());
+            }
+        });
+
+        Button button_answer_c = findViewById(R.id.answer_c);
+        button_answer_c.setText(current_quest.getAnswer(2));
+        button_answer_c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 buttonClick(current_quest.getCorrectAnsInt(), 2, current_quest.getCorrectAnsStr());
             }
         });
 
-        Button button_answer_c = findViewById(R.id.answer_c);
-        button_answer_c.setText(current_quest.getAnswer(3));
-        button_answer_c.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buttonClick(current_quest.getCorrectAnsInt(), 3, current_quest.getCorrectAnsStr());
-            }
-        });
-
         Button button_answer_d = findViewById(R.id.answer_d);
-        button_answer_d.setText(current_quest.getAnswer(4));
+        button_answer_d.setText(current_quest.getAnswer(3));
         button_answer_d.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buttonClick(current_quest.getCorrectAnsInt(), 4, current_quest.getCorrectAnsStr());
+                buttonClick(current_quest.getCorrectAnsInt(), 3, current_quest.getCorrectAnsStr());
             }
         });
     }

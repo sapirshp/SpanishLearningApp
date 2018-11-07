@@ -7,6 +7,8 @@ public class QuestionsDB {
 
     private static final ArrayList<ArrayList<String>> questionsList;
     private static ArrayList<Integer> questionsNumbersList;
+    public static int score;
+
     static {
         questionsList = new ArrayList<>();
 
@@ -51,21 +53,27 @@ public class QuestionsDB {
         questionsList.add(fifthQuestion);
 
         questionsNumbersList = new ArrayList<Integer>();
+        score = 0;
     }
 
-    private static void initSet() {
+    private static void initValues() {
         for(int i = 0; i < questionsList.size(); i++) {
             questionsNumbersList.add(i);
         }
         Collections.shuffle(questionsNumbersList);
+        score = 0;
     }
 
     static ArrayList<String> get_question() {
         if (questionsNumbersList.size() < 1) {
-            initSet();
+            initValues();
         }
         int chosenQuestionNum = questionsNumbersList.remove(questionsNumbersList.size() - 1);
         return questionsList.get(chosenQuestionNum);
+    }
+
+    public static int getQuestionsAmount() {
+        return questionsList.size();
     }
 
 }

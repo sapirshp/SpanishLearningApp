@@ -22,6 +22,11 @@ public class answerScreen extends AppCompatActivity {
         return String.valueOf(score) + "/" + String.valueOf(getQuestionsAmount());
     }
 
+//    list of 2 ints instead of string
+//    public static int[] getPerformanceMetric() {
+//        return new int[] {score, getQuestionsAmount()};
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +54,9 @@ public class answerScreen extends AppCompatActivity {
         img.setImageResource(id);
 
         String performanceMetric = getPerformanceMetric(); //TODO use in the new score bar
+
+//        list of 2 ints instead of string
+//        int[] performanceMetric = getPerformanceMetric();
 
 
         Button playAgainBtn = findViewById(R.id.play_again_btn);

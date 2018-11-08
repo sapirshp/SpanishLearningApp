@@ -39,26 +39,31 @@ public class answerScreen extends AppCompatActivity {
 
         String message;
         TextView is_correct_box = findViewById(R.id.is_correct_text_view);
+        TextView correct_answer_text = findViewById(R.id.correct_answer);
+        Button nextBtn = findViewById(R.id.play_again_btn);
         boolean is_correct = getIntent().getExtras().getBoolean("IS_CORRECT");
         cicleProgress ++;
         if(is_correct)
         {
             backLayout.setBackgroundResource(R.drawable.correct_answer);
+            nextBtn.setBackgroundResource(R.drawable.green_btn);
             message = "yay! correct!";
             score++;
         }
         else
         {
             backLayout.setBackgroundResource(R.drawable.wrong_answer);
+            nextBtn.setBackgroundResource(R.drawable.red_btn);
             message = "don't worry, you'll do better next time...";
         }
         is_correct_box.setText(message);
         String correct_ans_str = getIntent().getExtras().getString("ANSWER");
+        correct_answer_text.setText(correct_ans_str);
 
         // displaying the answer picture on the screen
         ImageView img = findViewById(R.id.ansImageView);
         Context context = img.getContext();
-        int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase()+"_answer",
+        int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase(),
                                                 "drawable", context.getPackageName());
         img.setImageResource(id);
 

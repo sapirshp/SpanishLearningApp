@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import static com.example.palabra.QuestionsDB.getQuestionsAmount;
 import static com.example.palabra.QuestionsDB.score;
+import static com.example.palabra.QuestionsDB.cicleProgress;
+
 
 
 public class answerScreen extends AppCompatActivity {
@@ -22,6 +24,11 @@ public class answerScreen extends AppCompatActivity {
         return String.valueOf(score) + "/" + String.valueOf(getQuestionsAmount());
     }
 
+//    list of 2 ints instead of string
+//    public static int[] getPerformanceMetric() {
+//        return new int[] {score, getQuestionsAmount()};
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +37,7 @@ public class answerScreen extends AppCompatActivity {
         String message;
         TextView is_correct_box = findViewById(R.id.is_correct_text_view);
         boolean is_correct = getIntent().getExtras().getBoolean("IS_CORRECT");
+        cicleProgress ++;
         if(is_correct)
         {
             message = "yay! correct!";
@@ -45,11 +53,18 @@ public class answerScreen extends AppCompatActivity {
         // displaying the answer picture on the screen
         ImageView img = findViewById(R.id.ansImageView);
         Context context = img.getContext();
-        int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase()+"_answer", "drawable", context.getPackageName());
+        int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase()+"_answer",
+                                                "drawable", context.getPackageName());
         img.setImageResource(id);
 
         String performanceMetric = getPerformanceMetric(); //TODO use in the new score bar
 
+//        list of 2 ints instead of string
+//        int[] performanceMetric = getPerformanceMetric();
+
+//        if (cicleProgress == getQuestionsAmount()) { //TODO use this 'if' for changing the button from  "next question" to "new game"
+//
+//        }
 
         Button playAgainBtn = findViewById(R.id.play_again_btn);
         playAgainBtn.setOnClickListener(new View.OnClickListener() {

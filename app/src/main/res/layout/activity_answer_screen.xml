@@ -7,6 +7,13 @@
     android:background="@drawable/background_screen"
     tools:context=".answerScreen">
 
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,17 +35,21 @@ public class answerScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer_screen);
 
+        RelativeLayout backLayout = (RelativeLayout) findViewById(R.id.back);
+
         String message;
         TextView is_correct_box = findViewById(R.id.is_correct_text_view);
         boolean is_correct = getIntent().getExtras().getBoolean("IS_CORRECT");
         cicleProgress ++;
         if(is_correct)
         {
+            backLayout.setBackgroundResource(R.drawable.correct_answer);
             message = "yay! correct!";
             score++;
         }
         else
         {
+            backLayout.setBackgroundResource(R.drawable.wrong_answer);
             message = "don't worry, you'll do better next time...";
         }
         is_correct_box.setText(message);

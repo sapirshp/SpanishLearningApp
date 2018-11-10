@@ -45,12 +45,52 @@ public class QuestionsDB {
         questionsList.add(fourthQuestion);
 
         ArrayList<String> fifthQuestion = new ArrayList<>();
-        fifthQuestion.add("fireman");
+        fifthQuestion.add("Fireman");
         fifthQuestion.add("Bombero");
         fifthQuestion.add("Doctor");
         fifthQuestion.add("Conductor");
         fifthQuestion.add("Profesor");
         questionsList.add(fifthQuestion);
+
+//        ArrayList<String> sixthQuestion = new ArrayList<>();
+//        sixthQuestion.add("Beach");
+//        sixthQuestion.add("Playa");
+//        sixthQuestion.add("Biblioteca");
+//        sixthQuestion.add("Mercado");
+//        sixthQuestion.add("Piscina");
+//        questionsList.add(sixthQuestion);
+//
+//        ArrayList<String> seventhQuestion = new ArrayList<>();
+//        seventhQuestion.add("Bathroom");
+//        seventhQuestion.add("Baño");
+//        seventhQuestion.add("Sala");
+//        seventhQuestion.add("Cocina");
+//        seventhQuestion.add("Vestíbulo");
+//        questionsList.add(seventhQuestion);
+//
+//        ArrayList<String> eighthQuestion = new ArrayList<>();
+//        eighthQuestion.add("Eye");
+//        eighthQuestion.add("Ojo");
+//        eighthQuestion.add("Cabeza");
+//        eighthQuestion.add("Oreja");
+//        eighthQuestion.add("Naríz");
+//        questionsList.add(eighthQuestion);
+//
+//        ArrayList<String> ninthQuestion = new ArrayList<>();
+//        ninthQuestion.add("Lightning");
+//        ninthQuestion.add("Relámpago");
+//        ninthQuestion.add("Lluvia");
+//        ninthQuestion.add("Cascada");
+//        ninthQuestion.add("Niebla");
+//        questionsList.add(ninthQuestion);
+//
+//        ArrayList<String> tenthQuestion = new ArrayList<>();
+//        tenthQuestion.add("Monkey");
+//        tenthQuestion.add("Mono");
+//        tenthQuestion.add("Ballena");
+//        tenthQuestion.add("Oso");
+//        tenthQuestion.add("Oveja");
+//        questionsList.add(tenthQuestion);
 
         questionsNumbersList = new ArrayList<Integer>();
         score = 0;

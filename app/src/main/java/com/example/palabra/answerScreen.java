@@ -22,13 +22,8 @@ public class answerScreen extends AppCompatActivity {
     private static long back_pressed;
 
     public static String getPerformanceMetric() {
-        return String.valueOf(score) + "/" + String.valueOf(getQuestionsAmount());
+        return String.valueOf(score) + "/" + String.valueOf(cicleProgress);
     }
-
-//    list of 2 ints instead of string
-//    public static int[] getPerformanceMetric() {
-//        return new int[] {score, getQuestionsAmount()};
-//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +53,6 @@ public class answerScreen extends AppCompatActivity {
             message = "Oops.. Wrong answer";
         }
 
-
         is_correct_box.setText(message);
         String correct_ans_str = getIntent().getExtras().getString("ANSWER");
         correct_answer_text.setText(correct_ans_str);
@@ -72,9 +66,6 @@ public class answerScreen extends AppCompatActivity {
 
         String performanceMetric = getPerformanceMetric();
         scoreView.setText("Score: " + performanceMetric);
-
-//        list of 2 ints instead of string
-//        int[] performanceMetric = getPerformanceMetric();
 
         if (cicleProgress == getQuestionsAmount()) {
             nextBtn.setText("New Game!");

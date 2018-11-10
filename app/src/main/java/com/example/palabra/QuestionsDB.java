@@ -61,10 +61,10 @@ public class QuestionsDB {
 //        questionsList.add(sixthQuestion);
 //
 //        ArrayList<String> seventhQuestion = new ArrayList<>();
-//        seventhQuestion.add("Bathroom");
-//        seventhQuestion.add("Baño");
-//        seventhQuestion.add("Sala");
+//        seventhQuestion.add("Kitchen");
 //        seventhQuestion.add("Cocina");
+//        seventhQuestion.add("Sala");
+//        seventhQuestion.add("Baño");
 //        seventhQuestion.add("Vestíbulo");
 //        questionsList.add(seventhQuestion);
 //
@@ -78,7 +78,7 @@ public class QuestionsDB {
 //
 //        ArrayList<String> ninthQuestion = new ArrayList<>();
 //        ninthQuestion.add("Lightning");
-//        ninthQuestion.add("Relámpago");
+//        ninthQuestion.add("Relampago");
 //        ninthQuestion.add("Lluvia");
 //        ninthQuestion.add("Cascada");
 //        ninthQuestion.add("Niebla");

@@ -2,4 +2,6 @@
     <string name="app_name">Palabra</string>
     <string name="question_picture">question picture</string>
     <string name="what_do_you_see_in_the_picture">What do you see in the picture?</string>
+    <string name="textview">TextView</string>
+    <string name="the_correct_answer_is">The correct answer is:</string>
 </resources>

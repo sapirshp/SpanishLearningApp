@@ -39,40 +39,49 @@ public class answerScreen extends AppCompatActivity {
 
         String message;
         TextView is_correct_box = findViewById(R.id.is_correct_text_view);
+        TextView correct_answer_text = findViewById(R.id.correct_answer);
+        TextView scoreView = findViewById(R.id.score);
+        Button nextBtn = findViewById(R.id.play_again_btn);
         boolean is_correct = getIntent().getExtras().getBoolean("IS_CORRECT");
         cicleProgress ++;
         if(is_correct)
         {
             backLayout.setBackgroundResource(R.drawable.correct_answer);
-            message = "yay! correct!";
+            nextBtn.setBackgroundResource(R.drawable.green_btn);
+            message = "Yay! Correct!";
             score++;
         }
         else
         {
             backLayout.setBackgroundResource(R.drawable.wrong_answer);
-            message = "don't worry, you'll do better next time...";
+            nextBtn.setBackgroundResource(R.drawable.red_btn);
+            message = "Oops.. Wrong answer";
+        }
+        if(cicleProgress == getQuestionsAmount()){
+
         }
         is_correct_box.setText(message);
         String correct_ans_str = getIntent().getExtras().getString("ANSWER");
+        correct_answer_text.setText(correct_ans_str);
 
         // displaying the answer picture on the screen
         ImageView img = findViewById(R.id.ansImageView);
         Context context = img.getContext();
-        int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase()+"_answer",
+        int id = context.getResources().getIdentifier(correct_ans_str.toLowerCase(),
                                                 "drawable", context.getPackageName());
         img.setImageResource(id);
 
-        String performanceMetric = getPerformanceMetric(); //TODO use in the new score bar
+        String performanceMetric = getPerformanceMetric();
+        scoreView.setText("Score: " + performanceMetric);
 
 //        list of 2 ints instead of string
 //        int[] performanceMetric = getPerformanceMetric();
 
-//        if (cicleProgress == getQuestionsAmount()) { //TODO use this 'if' for changing the button from  "next question" to "new game"
-//
-//        }
+        if (cicleProgress == getQuestionsAmount()) {
+            nextBtn.setText("New Game!");
+        }
 
-        Button playAgainBtn = findViewById(R.id.play_again_btn);
-        playAgainBtn.setOnClickListener(new View.OnClickListener() {
+        nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent playAgainIntent = new Intent();

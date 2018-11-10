@@ -57,9 +57,8 @@ public class answerScreen extends AppCompatActivity {
             nextBtn.setBackgroundResource(R.drawable.red_btn);
             message = "Oops.. Wrong answer";
         }
-        if(cicleProgress == getQuestionsAmount()){
 
-        }
+
         is_correct_box.setText(message);
         String correct_ans_str = getIntent().getExtras().getString("ANSWER");
         correct_answer_text.setText(correct_ans_str);

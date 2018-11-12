@@ -37,8 +37,8 @@ public class answerScreen extends AppCompatActivity {
         TextView correct_answer_text = findViewById(R.id.correct_answer);
         TextView scoreView = findViewById(R.id.score);
         Button nextBtn = findViewById(R.id.play_again_btn);
-        boolean is_correct = getIntent().getExtras().getBoolean("IS_CORRECT");
         cicleProgress ++;
+        boolean is_correct = getIntent().getExtras().getBoolean("IS_CORRECT");
         if(is_correct)
         {
             backLayout.setBackgroundResource(R.drawable.correct_answer);

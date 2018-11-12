@@ -2,6 +2,7 @@ package com.example.palabra;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -52,6 +53,8 @@ public class answerScreen extends AppCompatActivity {
 
         if (cycleProgress == getQuestionsAmount()) {
             nextBtn.setText("New Game!");
+            nextBtn.setBackgroundResource(R.drawable.new_game_btn);
+            nextBtn.setTextColor(Color.parseColor("#ffffff"));
         }
 
         nextBtn.setOnClickListener(new View.OnClickListener() {

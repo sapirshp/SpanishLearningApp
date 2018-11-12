@@ -8,7 +8,7 @@ public class QuestionsDB {
     private static final ArrayList<ArrayList<String>> questionsList;
     private static ArrayList<Integer> questionsNumbersList;
     public static int score;
-    public static int cicleProgress;
+    public static int cycleProgress;
     static {
         questionsList = new ArrayList<>();
 
@@ -102,7 +102,7 @@ public class QuestionsDB {
         }
         Collections.shuffle(questionsNumbersList);
         score = 0;
-        cicleProgress = 0;
+        cycleProgress = 0;
     }
 
     static ArrayList<String> get_question() {

@@ -29,11 +29,7 @@ public class MainActivity extends AppCompatActivity {
     {
         final Question current_quest = Question.get_question();
 
-        // displaying the question image on the screen.
-        ImageView img = findViewById(R.id.appImageView);
-        Context context = img.getContext();
-        int id = context.getResources().getIdentifier(current_quest.getCorrectAnsStr().toLowerCase(), "drawable", context.getPackageName());
-        img.setImageResource(id);    // make modular in next update
+        displayQuestionImageToScreen(current_quest);
 
         Button button_answer_a = findViewById(R.id.answer_a);
         button_answer_a.setText(current_quest.getAnswer(0));
@@ -75,6 +71,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private void displayQuestionImageToScreen(Question current_quest) {
+        ImageView question_img = findViewById(R.id.appImageView);
+        Context context = question_img.getContext();
+        int question_image_name = context.getResources().getIdentifier(current_quest.getCorrectAnsStr().toLowerCase(), "drawable", context.getPackageName());
+        question_img.setImageResource(question_image_name);
+    }
+
+
     public void buttonClick(int correct_ans, int user_choice, String str_correct_answer)
     {
         Intent goToAnsScreen = new Intent(getApplicationContext(), answerScreen.class);
@@ -97,9 +101,9 @@ public class MainActivity extends AppCompatActivity {
         {
             if(resultCode == EXIT_APP)
             {
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.addCategory(Intent.CATEGORY_HOME);
-                startActivity(intent);
+                Intent exit_intent = new Intent(Intent.ACTION_MAIN);
+                exit_intent.addCategory(Intent.CATEGORY_HOME);
+                startActivity(exit_intent);
             }
             if(resultCode == PLAY_AGAIN)
             {
@@ -115,9 +119,9 @@ public class MainActivity extends AppCompatActivity {
     {
         if (back_pressed + 2000 > System.currentTimeMillis())
         {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            startActivity(intent);
+            Intent exit_intent = new Intent(Intent.ACTION_MAIN);
+            exit_intent.addCategory(Intent.CATEGORY_HOME);
+            startActivity(exit_intent);
         }
         else Toast.makeText(getBaseContext(), "Press once again to exit!", Toast.LENGTH_SHORT).show();
         back_pressed = System.currentTimeMillis();
